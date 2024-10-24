@@ -4,7 +4,7 @@ export { useHello } from './hooks/hello.hook';
 
 // components
 export { default as Header } from "./components/header";
-export { default as Counter } from "./components/counter";
+export { default as Counter } from "./components/counter/counter";
 
 // themes
 export { ONE_THEME } from './themes/one/one.theme';

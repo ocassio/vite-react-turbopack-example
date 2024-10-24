@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Button } from "@mui/material";
 
-interface CounterProps {
+export interface CounterProps {
   value: number;
   onClick: () => void;
 }
