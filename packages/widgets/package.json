@@ -1,0 +1,24 @@
+{
+    "name": "@repo/widgets",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+    },
+    "dependencies": {
+        "@repo/ui": "*"
+    },
+    "devDependencies": {
+      "@repo/typescript-config": "*",
+      "@types/react": "^18.3.12",
+      "@types/react-dom": "^18.3.1",
+      "typescript": "^5.3.3"
+    },
+    "peerDependencies": {
+      "@emotion/react": "^11.13.3",
+      "@emotion/styled": "^11.13.0",
+      "@mui/material": "^6.1.5",
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1"
+    }
+  }
+  

@@ -4,6 +4,8 @@ import typescriptLogo from "/typescript.svg";
 import { FC, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Test from "./components/test.component";
+import { DATE_FORMAT } from "@repo/widgets/const/format.const";
+import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
 
 const App: FC = () => {
   const [value, increase] = useCounter();
@@ -24,11 +26,12 @@ const App: FC = () => {
           alt="TypeScript logo"
         />
       </a>
-      <Header title="Web" />
+      <Header title={DATE_FORMAT} />
       <div className="card">
         <Counter value={value} onClick={increase} />
       </div>
       <Test />
+      <ToggleButtons />
     </div>
   );
 };

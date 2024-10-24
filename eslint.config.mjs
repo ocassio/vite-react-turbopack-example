@@ -48,4 +48,8 @@ export default [
     files: ["packages/ui/**/*.@(ts|tsx)"],
     ignores: ["packages/ui/dist/"]
   },
+  {
+    ...common({ tsConfigPath: "packages/widgets/tsconfig.json" }),
+    files: ["packages/widgets/src/**/*.@(ts|tsx)"],
+  },
 ];
