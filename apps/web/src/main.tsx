@@ -1,4 +1,4 @@
-import { Header, Counter, useCounter } from "@repo/ui";
+import { Header, Counter, useCounter, ONE_THEME } from "@repo/ui";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { FC, StrictMode } from "react";
@@ -7,6 +7,7 @@ import Test from "./components/test.component";
 import { DATE_FORMAT } from "@repo/widgets/const/format.const";
 import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
 import Fake from "@repo/widgets/components/fake.component";
+import { ThemeProvider } from "@mui/material";
 
 const App: FC = () => {
   const [value, increase] = useCounter();
@@ -41,6 +42,8 @@ const App: FC = () => {
 const root = createRoot(document.getElementById("app")!);
 root.render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={ONE_THEME}>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );

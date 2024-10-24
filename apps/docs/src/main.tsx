@@ -1,9 +1,10 @@
-import { Header, Counter, useCounter } from "@repo/ui";
+import { Header, Counter, useCounter, TWO_THEME } from "@repo/ui";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { FC, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
+import { ThemeProvider } from "@mui/material";
 
 const App: FC = () => {
   const [value, increase] = useCounter();
@@ -36,6 +37,8 @@ const App: FC = () => {
 const root = createRoot(document.getElementById("app")!);
 root.render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={TWO_THEME}>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
