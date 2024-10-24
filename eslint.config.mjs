@@ -2,11 +2,18 @@ import path from "path";
 import { fileURLToPath } from "url";
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 const fileName = fileURLToPath(import.meta.url);
 const dirName = path.dirname(fileName);
 
 const common = ({ tsConfigPath }) => ({
+  settings: {
+    react: {
+      version: '18.3'
+    }
+  },
   languageOptions: {
     parser: tsParser,
     parserOptions: {
@@ -14,10 +21,15 @@ const common = ({ tsConfigPath }) => ({
     },
   },
   plugins: {
-    '@typescript-eslint': tsPlugin
+    '@typescript-eslint': tsPlugin,
+    react: reactPlugin,
+    'react-hooks': reactHooksPlugin
   },
   rules: {
     ...tsPlugin.configs.recommended.rules,
+    ...reactPlugin.configs.flat.recommended.rules,
+    ...reactPlugin.configs.flat['jsx-runtime'].rules,
+    ...reactHooksPlugin.configs.recommended.rules,
     semi: ["error", "always"],
   },
 });
@@ -34,5 +46,6 @@ export default [
   {
     ...common({ tsConfigPath: "packages/ui/tsconfig.json" }),
     files: ["packages/ui/**/*.@(ts|tsx)"],
+    ignores: ["packages/ui/dist/"]
   },
 ];
