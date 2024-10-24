@@ -3,6 +3,7 @@ import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { FC, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
 
 const App: FC = () => {
   const [value, increase] = useCounter();
@@ -27,6 +28,7 @@ const App: FC = () => {
       <div className="card">
         <Counter value={value} onClick={increase} />
       </div>
+      <ToggleButtons />
     </div>
   );
 };
