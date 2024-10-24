@@ -1,5 +1,11 @@
 {
   "extends": "@repo/typescript-config/vite.json",
   "include": ["."],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/widgets/*": ["src/*"]
+    }
+  }
 }
