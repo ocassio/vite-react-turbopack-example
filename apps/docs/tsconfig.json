@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@repo/widgets/*": ["../../packages/widgets/src/*"]
     }
   },

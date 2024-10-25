@@ -3,7 +3,7 @@ import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { FC, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Test from "./components/test.component";
+import Test from "@/components/test.component";
 import { DATE_FORMAT } from "@repo/widgets/const/format.const";
 import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
 import Fake from "@repo/widgets/components/fake.component";
