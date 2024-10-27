@@ -5,5 +5,6 @@ export const TWO_THEME = createTheme({
     palette: {
         primary: blue,
         secondary: green
-    }
+    },
+    spacing: 16
 });
