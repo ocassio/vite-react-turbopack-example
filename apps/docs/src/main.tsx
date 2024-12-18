@@ -1,14 +1,16 @@
-import { Header, Counter, useCounter, TWO_THEME } from "@repo/ui";
-import "./style.css";
-import typescriptLogo from "/typescript.svg";
+import { ThemeProvider } from "@mui/material";
+import { Counter, Header, TWO_THEME, useCounter } from "@repo/ui";
+import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
 import { FC, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import ToggleButtons from "@repo/widgets/components/toggle-buttons.component";
-import { ThemeProvider } from "@mui/material";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import { Link } from "react-router-dom";
+import { CustomLink } from "../../../packages/ui";
+import "./style.css";
+import typescriptLogo from "/typescript.svg";
 
-const App: FC = () => {
+const Page1: FC = () => {
   const [value, increase] = useCounter();
-
   return (
     <div>
       <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
@@ -30,7 +32,34 @@ const App: FC = () => {
         <Counter value={value} onClick={increase} />
       </div>
       <ToggleButtons />
+      <CustomLink url="/test">Test</CustomLink>
     </div>
+  );
+};
+
+const Page2: FC = () => {
+  return (
+    <div>
+      <h1>Test</h1>
+      <Link to="/">Back</Link>
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/test",
+    element: <Page2 />
+  },
+  {
+    path: "/",
+    element: <Page1 />
+  }
+]);
+
+const App: FC = () => {
+  return (
+    <RouterProvider router={router} />
   );
 };
 
